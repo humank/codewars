@@ -1,7 +1,5 @@
 package solid.humank.codewars.square;
 
-import java.util.Arrays;
-
 /**
  * Created by kim on 2017/2/13.
  *
@@ -19,12 +17,24 @@ public class Kata {
 
         for(int i =0; i<input.length;i++){
 
-            if(Math.sqrt((double)input[i]) == (int)Math.sqrt((double)input[i])){
-                sutArray[i] = (int)Math.sqrt((double)input[i]);
+            if(isSqrtAble(input[i])){
+                sutArray[i] = (int) getSqrt(input[i]);
             }else {
-                sutArray[i]=(int)Math.pow(input[i],2);
+                sutArray[i]= getPow(input, i);
             }
         }
         return sutArray;
+    }
+
+    private static boolean isSqrtAble(int i) {
+        return getSqrt(i) == (int) getSqrt(i);
+    }
+
+    private static int getPow(int[] input, int i) {
+        return (int)Math.pow(input[i],2);
+    }
+
+    private static double getSqrt(int i) {
+        return Math.sqrt((double) i);
     }
 }
