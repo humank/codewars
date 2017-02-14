@@ -8,14 +8,14 @@ public class StringUtils {
 
         boolean isDigit = true;
 
-        if (s.length() > 1) {
-            isDigit = false;
-
-        } else {
-            isDigit = digitCheck(s);
-        }
+        isDigit = isDigit && isSingleChar(s);
+        isDigit = isDigit && digitCheck(s);
 
         return isDigit;
+    }
+
+    private static boolean isSingleChar(String s) {
+        return s.length() == 1;
     }
 
     private static boolean digitCheck(String s) {
