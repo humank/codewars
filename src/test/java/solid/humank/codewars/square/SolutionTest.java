@@ -1,3 +1,5 @@
+package solid.humank.codewars.square;
+
 import org.junit.Test;
 import solid.humank.codewars.square.Kata;
 

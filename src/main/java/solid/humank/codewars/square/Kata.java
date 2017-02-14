@@ -1,5 +1,7 @@
 package solid.humank.codewars.square;
 
+import java.util.Arrays;
+
 /**
  * Created by kim on 2017/2/13.
  *
@@ -12,29 +14,8 @@ package solid.humank.codewars.square;
 public class Kata {
     public static int[] squareOrSquareRoot(int[] input) {
 
-        int size = input.length;
-        int[] sutArray = new int[size];
-
-        for(int i =0; i<input.length;i++){
-
-            if(isSqrtAble(input[i])){
-                sutArray[i] = (int) getSqrt(input[i]);
-            }else {
-                sutArray[i]= getPow(input, i);
-            }
-        }
-        return sutArray;
-    }
-
-    private static boolean isSqrtAble(int i) {
-        return getSqrt(i) == (int) getSqrt(i);
-    }
-
-    private static int getPow(int[] input, int i) {
-        return (int)Math.pow(input[i],2);
-    }
-
-    private static double getSqrt(int i) {
-        return Math.sqrt((double) i);
+        return Arrays.stream(input)
+                .map(i -> Math.sqrt(i) % 1 == 0 ? ((int) Math.sqrt(i)) : (i * i))
+                .toArray();
     }
 }
