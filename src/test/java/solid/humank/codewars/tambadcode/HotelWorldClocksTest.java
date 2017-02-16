@@ -40,6 +40,8 @@ public class HotelWorldClocksTest {
         assertEquals(1,londonClock.getTime());
 
 
+        //TODO 4 只做測試比UTC時間早的城市, 比UTC時間晚的沒有測到
+
     }
 
 }
