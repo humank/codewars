@@ -1,6 +1,5 @@
 package solid.humank.codewars.tambadcode;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -18,6 +17,16 @@ public class HotelWorldClocksTest {
         // 2. write act code
         // 3. write arrange code
         // from the end viewpoint of using scenario, that you will more clear to figure out your code structure.
+
+        /**
+         *
+         * 在這裡書中特別提到, programming by intention, 也就是說避免你奢侈的思考浪費
+         * 所有的設計方式都是按照著你的意圖下去走, 從最後的真正期望 -- Assert 開始走
+         * 再逐步地往前看, 是基於什麼崔始你的Assert 能被正常執行--> Action
+         * 那麼要執行Action, 是基於Arrange 的基礎條件設置
+         *
+         * 至此, 你的TDD 3A 原則思考套路成形了 !
+         */
 
         //Arrange
         CityClock londonClock = new CityClock(0);
