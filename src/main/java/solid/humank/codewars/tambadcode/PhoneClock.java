@@ -7,7 +7,6 @@ public class PhoneClock extends Clock {
 
     private CityClock cityClock;
     private HotelWorldClockSystem hotelWorldClockSystem;
-    private int time;
 
     public PhoneClock(int utcOffset) {
         super.utcOffset = utcOffset;
@@ -33,6 +32,7 @@ public class PhoneClock extends Clock {
         this.hotelWorldClockSystem = hotelWorldClockSystem;
     }
 
+    @Override
     public int getTime() {
         return this.time;
     }
