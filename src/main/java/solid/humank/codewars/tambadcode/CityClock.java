@@ -14,10 +14,9 @@ public class CityClock {
     }
 
 
-
-
     /**
      * 當地時間 = UTC時間 + 當地時間與UTC時間的時間差
+     *
      * @return
      */
 
@@ -25,7 +24,7 @@ public class CityClock {
 
         //TODO 1 每次都回傳1 , 這個東西是個壞味道, 應該要改成以變數方式傳遞
 
-        return this.utcOffset+ this.utcZeroTime;
+        return (this.utcOffset + this.utcZeroTime + 24) % 24;
     }
 
     public void setUtcZeroTime(int utcZeroTime) {
