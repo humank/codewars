@@ -62,7 +62,22 @@ public class HotelWorldClocksTest {
 
         //Arrange
 
+        /**
+         * 我們心裡想著希望可以直接改手機上的時鐘, 就能一次性的把全世界的時間都調整好,
+         * 常見的用法我們可能會乾脆就塞一個ArrayList, 讓phoneClock在調整時就醫病處理掉,
+         * 但是ArrayList 這樣的概念並不是真正的領域概念, 我們可以用一個世界時間系統來表示完整的世界時間,
+         * 這樣就可以一次直接調整
+         */
+
+        CityClock londonClock = new CityClock(0);
+        CityClock newYorkClock = new CityClock(-5);
+        HotelWorldClockSystem hotelWorldClockSystem = new HotelWorldClockSystem();
+        hotelWorldClockSystem.attach(londonClock);
+        hotelWorldClockSystem.attach(newYorkClock);
+
         //Act
+        phoneClock.setTime(9);
+        phoneClock.setHotelWorldClockSystem(hotelWorldClockSystem);
 
         //Assert
         assertEquals(1,londonClock.getTime());
