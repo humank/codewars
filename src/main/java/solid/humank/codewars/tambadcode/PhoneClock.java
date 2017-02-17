@@ -12,11 +12,6 @@ public class PhoneClock extends Clock {
         super.utcOffset = utcOffset;
     }
 
-    public void setCityClock(CityClock cityClock) {
-
-        this.cityClock = cityClock;
-    }
-
     public void setTime(int time) {
 
         /**
