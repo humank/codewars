@@ -3,15 +3,13 @@ package solid.humank.codewars.tambadcode;
 /**
  * Created by yikai on 2017/2/16.
  */
-public class PhoneClock {
+public class PhoneClock extends Clock {
 
     private CityClock cityClock;
-    private int utcOffset;
     private HotelWorldClockSystem hotelWorldClockSystem;
 
-    //TODO 3 CityClock 跟PhoneClock 都有個utcOffset , 可以被一起提取到父類別出來做重構
     public PhoneClock(int utcOffset) {
-        this.utcOffset = utcOffset;
+        super.utcOffset = utcOffset;
     }
 
     public void setCityClock(CityClock cityClock) {
@@ -27,7 +25,7 @@ public class PhoneClock {
          */
 
         for (CityClock cityClock : this.hotelWorldClockSystem.getClocks()) {
-            cityClock.setUtcZeroTime(time - this.utcOffset);
+            cityClock.setUtcZeroTime(time - super.utcOffset);
         }
 
     }

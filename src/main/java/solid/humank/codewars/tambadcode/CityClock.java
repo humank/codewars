@@ -6,10 +6,8 @@ package solid.humank.codewars.tambadcode;
 public class CityClock extends Clock {
     private int utcZeroTime;
 
-    //TODO 2 CityClock 跟PhoneClock 都有個utcOffset , 可以被一起提取到父類別出來做重構
-
     public CityClock(int utcOffset) {
-        super(utcOffset);
+        super.utcOffset = utcOffset;
     }
 
 
@@ -20,7 +18,7 @@ public class CityClock extends Clock {
      */
 
     public int getTime() {
-        return (this.utcOffset + this.utcZeroTime + 24) % 24;
+        return (super.utcOffset + this.utcZeroTime + 24) % 24;
     }
 
     public void setUtcZeroTime(int utcZeroTime) {
