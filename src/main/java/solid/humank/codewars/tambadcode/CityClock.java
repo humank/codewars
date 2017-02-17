@@ -21,9 +21,6 @@ public class CityClock {
      */
 
     public int getTime() {
-
-        //TODO 1 每次都回傳1 , 這個東西是個壞味道, 應該要改成以變數方式傳遞
-
         return (this.utcOffset + this.utcZeroTime + 24) % 24;
     }
 

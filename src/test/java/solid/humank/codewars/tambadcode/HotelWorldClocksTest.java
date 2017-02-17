@@ -43,7 +43,7 @@ public class HotelWorldClocksTest {
 
 
     }
-    //TODO 4 只做測試比UTC時間早的城市, 比UTC時間晚的沒有測到,所以補一個紐約的時鐘做測試
+
     @Test
     public void the_time_of_clock_NewYork_should_be_20_is_set_to_9_Beijing_time(){
 
