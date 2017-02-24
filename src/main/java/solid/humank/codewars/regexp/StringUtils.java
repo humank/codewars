@@ -19,9 +19,8 @@ public class StringUtils {
     }
 
     private static boolean digitCheck(String s) {
-        //0-9 , ascii range is 48~57
 
         char c = s.charAt(0);
-        return c>=48 && c<=57;
+        return c >= 48 && c <= 57;
     }
 }
